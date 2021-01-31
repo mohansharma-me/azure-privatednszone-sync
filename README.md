@@ -12,8 +12,8 @@ This script helps in copying A records from Private DNS zones to /etc/hosts file
 ## Steps
 
 - Register app in Azure Portal with permission to read Private DNS Zone
-- Update and copy dns.config file to ~ path
-- Run dns-sync.sh with appropriate permission
+- Update and copy dns.config file to `/path/to/some-directory/` path
+- Run `dns-sync.sh /path/to/some-directory/` with appropriate permission
 
 ### Note
 
