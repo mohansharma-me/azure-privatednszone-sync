@@ -37,7 +37,7 @@ sed -i -e "s@jq @$(which jq) @g" "${HOME}/.dns/dns-sync.sh"
 chmod +x "${HOME}/.dns/dns-sync.sh"
 
 # Add cron
-echo "*/1 * * * * \"${HOME}/.dns/dns-sync.sh\" \"${HOME}/.dns\" >> \"${HOME}/.dns/dns.log\" 2>&1" | sudo crontab
+echo "0 */1 * * * \"${HOME}/.dns/dns-sync.sh\" \"${HOME}/.dns\" >> \"${HOME}/.dns/dns.log\" 2>&1" | sudo crontab
 sudo crontab -l
 
 exit 0
