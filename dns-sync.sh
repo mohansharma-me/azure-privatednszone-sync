@@ -1,7 +1,9 @@
 #!/bin/bash
 # Pre: jq, httpie
+set -e
 echo "Running at $(date)"
-. ~/dns.config
+cd "${1}"
+. dns.config
 printf "Generating access token..."
 AUTH=$(http POST https://login.microsoftonline.com/${TENANT_ID}/oauth2/token content-type:"application/x-www-form-urlencoded" grant_type=client_credentials client_id="${CLIENT_ID}" client_secret="${CLIENT_SECRET}" resource="https://management.azure.com" --form)
 ACCESS_TOKEN=$(echo "${AUTH}" | jq -r '.access_token')
